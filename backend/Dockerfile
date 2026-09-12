@@ -19,6 +19,9 @@ RUN mkdir -p /tmp/classes && \
 
 RUN mkdir -p /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes && \
     cp -r /tmp/classes/* /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes/
+
+RUN sed -i 's/port="8080"/port="10000"/' /usr/local/tomcat/conf/server.xml
+
 EXPOSE 10000
 
-CMD ["sh", "-c", "echo '=== ExamSphere container starting ==='; echo PORT=$PORT; echo '=== Tomcat version ==='; /usr/local/tomcat/bin/catalina.sh version; echo '=== Starting Tomcat ==='; exec /usr/local/tomcat/bin/catalina.sh run"]
+CMD ["catalina.sh", "run"]
