@@ -19,12 +19,39 @@ public class DBConnection {
             System.getenv().getOrDefault("DB_USER", "root");
 
     private static final String PASSWORD =
-            System.getenv().getOrDefault("DB_PASSWORD", "Murugan@411");
+            System.getenv().getOrDefault("DB_PASSWORD", "");
 
-    private static final String URL =
-            "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE
-            + "?useSSL=false&allowPublicKeyRetrieval=true"
-            + "&serverTimezone=UTC";
+    /*
+     * Local MySQL:
+     *   SSL disabled for normal local development.
+     *
+     * Aiven MySQL:
+     *   SSL required.
+     */
+    private static final boolean IS_LOCAL =
+            HOST.equalsIgnoreCase("localhost")
+            || HOST.equals("127.0.0.1");
+
+    private static final String URL;
+
+    static {
+
+        if (IS_LOCAL) {
+
+            URL =
+                "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE
+                + "?useSSL=false"
+                + "&allowPublicKeyRetrieval=true"
+                + "&serverTimezone=UTC";
+
+        } else {
+
+            URL =
+                "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE
+                + "?sslMode=REQUIRED"
+                + "&serverTimezone=UTC";
+        }
+    }
 
     private static Connection connection;
 
@@ -50,14 +77,19 @@ public class DBConnection {
 
         } catch (ClassNotFoundException e) {
 
-            System.out.println("MySQL Driver Not Found.");
+            System.out.println(
+                    "MySQL Driver Not Found."
+            );
+
             e.printStackTrace();
 
         } catch (SQLException e) {
 
-            System.out.println("Database Connection Failed.");
-            e.printStackTrace();
+            System.out.println(
+                    "Database Connection Failed."
+            );
 
+            e.printStackTrace();
         }
 
         return connection;
