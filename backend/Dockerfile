@@ -20,6 +20,8 @@ RUN mkdir -p /tmp/classes && \
 RUN mkdir -p /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes && \
     cp -r /tmp/classes/* /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes/
 
-EXPOSE 8080
+RUN sed -i 's/port="8080"/port="10000"/' /usr/local/tomcat/conf/server.xml
+
+EXPOSE 10000
 
 CMD ["catalina.sh", "run"]
