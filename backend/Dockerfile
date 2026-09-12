@@ -20,6 +20,6 @@ RUN mkdir -p /tmp/classes && \
 RUN mkdir -p /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes && \
     cp -r /tmp/classes/* /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes/
 
-EXPOSE 8080
+EXPOSE 10000
 
-CMD ["catalina.sh", "run"]
+CMD ["sh", "-c", "echo 'Starting ExamSphere Tomcat...'; echo \"Render PORT = ${PORT:-10000}\"; sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT:-10000}\\\"/\" /usr/local/tomcat/conf/server.xml; echo 'Tomcat connector configured'; exec catalina.sh run"]
