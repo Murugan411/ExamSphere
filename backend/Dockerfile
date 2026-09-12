@@ -19,7 +19,6 @@ RUN mkdir -p /tmp/classes && \
 
 RUN mkdir -p /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes && \
     cp -r /tmp/classes/* /usr/local/tomcat/webapps/ExamSphere/WEB-INF/classes/
+EXPOSE 10000
 
-EXPOSE 8080
-
-CMD ["catalina.sh", "run"]
+CMD ["sh", "-c", "echo '=== ExamSphere container starting ==='; echo PORT=$PORT; echo '=== Tomcat version ==='; /usr/local/tomcat/bin/catalina.sh version; echo '=== Starting Tomcat ==='; exec /usr/local/tomcat/bin/catalina.sh run"]
