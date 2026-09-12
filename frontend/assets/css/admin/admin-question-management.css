@@ -1,0 +1,654 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fc;
+    display:flex;
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.sidebar{
+
+    width:270px;
+    height:100vh;
+    background:#1e293b;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow-y:auto;
+
+}
+
+.logo{
+
+    padding:30px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo h2{
+
+    color:#ffffff;
+    font-size:30px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+    margin-top:20px;
+
+}
+
+.sidebar ul li{
+
+    margin:8px 15px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#cbd5e1;
+    padding:15px 18px;
+    border-radius:10px;
+    transition:.3s;
+
+}
+
+.sidebar ul li.active a{
+
+    background:#2563EB;
+    color:#ffffff;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:#2563EB;
+    color:#ffffff;
+
+}
+
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
+.main-content{
+
+    margin-left:270px;
+    width:calc(100% - 270px);
+    padding:35px;
+
+}
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+    color:#1e293b;
+
+}
+
+.topbar p{
+
+    color:#64748b;
+    margin-top:5px;
+
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.add-btn,
+.toolbar button{
+
+    background:#2563EB;
+    color:#ffffff;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.add-btn:hover,
+.toolbar button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   TOOLBAR
+====================================== */
+
+.toolbar{
+
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+    align-items:center;
+
+}
+
+.toolbar input{
+
+    flex:1;
+    padding:14px;
+    border:1px solid #CBD5E1;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+
+}
+
+.toolbar input:focus{
+
+    border-color:#2563EB;
+
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+.table-container{
+
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    min-width:1200px;
+
+}
+
+thead{
+
+    background:#2563EB;
+    color:#ffffff;
+
+}
+
+th{
+
+    padding:16px;
+    text-align:left;
+
+}
+
+td{
+
+    padding:16px;
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/* ======================================
+   DIFFICULTY BADGES
+====================================== */
+
+.easy{
+
+    color:#16A34A;
+    font-weight:600;
+
+}
+
+.medium{
+
+    color:#F59E0B;
+    font-weight:600;
+
+}
+
+.hard{
+
+    color:#DC2626;
+    font-weight:600;
+
+}
+
+/* ======================================
+   ACTION BUTTONS
+====================================== */
+
+.edit-btn{
+
+    background:#F59E0B;
+    color:#ffffff;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:8px;
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#D97706;
+
+}
+
+.delete-btn{
+
+    background:#DC2626;
+    color:#ffffff;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#B91C1C;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+    width:calc(100% - 220px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-left:0;
+    width:100%;
+    padding:20px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+
+}
+
+.toolbar{
+
+    flex-direction:column;
+    align-items:stretch;
+
+}
+
+}
+/* =========================================================
+   EDIT QUESTION MODAL
+========================================================= */
+
+.edit-question-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+
+.edit-question-modal {
+    width: min(900px, 95vw);
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 25px 70px rgba(15, 23, 42, 0.30);
+    padding: 0;
+    animation: editModalShow 0.25s ease;
+}
+
+
+@keyframes editModalShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.edit-question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    background: #1d293d;
+    color: white;
+    border-radius: 16px 16px 0 0;
+}
+
+
+.edit-question-header h2 {
+    margin: 0 0 4px;
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+}
+
+
+.edit-question-header h2 i {
+    margin-right: 8px;
+}
+
+
+.edit-question-header p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+
+.close-edit-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.10);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.close-edit-btn:hover {
+    background: rgba(255,255,255,0.20);
+}
+
+
+/* =========================================================
+   EDIT FORM
+========================================================= */
+
+#editQuestionForm {
+    padding: 26px;
+}
+
+
+.edit-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+
+.edit-form-grid.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.edit-form-group {
+    margin-bottom: 18px;
+}
+
+
+.edit-form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #263650;
+}
+
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding: 10px 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+
+.edit-form-group input,
+.edit-form-group select {
+    height: 43px;
+}
+
+
+.edit-form-group textarea {
+    min-height: 105px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+    border-color: #2864e8;
+    box-shadow: 0 0 0 3px rgba(40, 100, 232, 0.10);
+}
+
+
+/* =========================================================
+   EDIT ACTIONS
+========================================================= */
+
+.edit-question-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 20px;
+    margin-top: 5px;
+    border-top: 1px solid #e5eaf1;
+}
+
+
+.cancel-edit-btn,
+.save-edit-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.cancel-edit-btn {
+    background: #e8edf5;
+    color: #263650;
+}
+
+
+.cancel-edit-btn:hover {
+    background: #dce4ef;
+}
+
+
+.save-edit-btn {
+    background: #2864e8;
+    color: white;
+}
+
+
+.save-edit-btn:hover {
+    background: #1f55cc;
+    transform: translateY(-1px);
+}
+
+
+.save-edit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.edit-question-modal::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.edit-question-modal::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.edit-question-modal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .edit-question-overlay {
+        padding: 15px;
+    }
+
+
+    .edit-question-modal {
+        width: 100%;
+        max-height: 95vh;
+    }
+
+
+    .edit-form-grid,
+    .edit-form-grid.three-columns {
+        grid-template-columns: 1fr;
+    }
+
+
+    #editQuestionForm {
+        padding: 20px;
+    }
+
+
+    .edit-question-header {
+        padding: 18px 20px;
+    }
+
+
+    .edit-question-actions {
+        flex-direction: column;
+    }
+
+
+    .cancel-edit-btn,
+    .save-edit-btn {
+        width: 100%;
+    }
+
+}

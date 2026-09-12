@@ -1,0 +1,1048 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Questions | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-exam-management.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .question-page {
+            padding: 30px;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .question-header {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .question-header h1 {
+
+            margin: 0;
+
+        }
+
+
+        .question-header p {
+
+            margin-top: 8px;
+            color: #718096;
+
+        }
+
+
+        /* =====================================================
+           HEADER BUTTONS
+        ===================================================== */
+
+        .back-btn,
+        .add-question-btn {
+
+            border: none;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+        }
+
+
+        .back-btn {
+
+            background: #e2e8f0;
+
+            color: #1e293b;
+
+            margin-right: 10px;
+
+        }
+
+
+        .add-question-btn {
+
+            background: #2563eb;
+
+            color: white;
+
+        }
+
+
+        .back-btn:hover {
+
+            background: #cbd5e1;
+
+        }
+
+
+        .add-question-btn:hover {
+
+            background: #1d4ed8;
+
+        }
+
+
+        /* =====================================================
+           EXAM INFORMATION
+        ===================================================== */
+
+        .exam-info {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.06);
+
+        }
+
+
+        .exam-info-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .info-box {
+
+            background: #f8fafc;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+        }
+
+
+        .info-box span {
+
+            display: block;
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .info-box strong {
+
+            color: #1e293b;
+
+            font-size: 16px;
+
+        }
+
+
+        /* =====================================================
+           QUESTION CONTAINER
+        ===================================================== */
+
+        .question-container {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.06);
+
+            overflow-x: auto;
+
+        }
+
+
+        .question-container h2 {
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =====================================================
+           TABLE
+        ===================================================== */
+
+        .question-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+
+        .question-table th {
+
+            background: #2563eb;
+
+            color: white;
+
+            padding: 14px;
+
+            text-align: left;
+
+        }
+
+
+        .question-table td {
+
+            padding: 14px;
+
+            border-bottom:
+                1px solid #e2e8f0;
+
+        }
+
+
+        .question-table tr:hover {
+
+            background: #f8fafc;
+
+        }
+
+
+        /* =====================================================
+           REMOVE BUTTON
+        ===================================================== */
+
+        .remove-btn {
+
+            background: #ef4444;
+
+            color: white;
+
+            border: none;
+
+            padding: 7px 12px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: 500;
+
+        }
+
+
+        .remove-btn:hover {
+
+            background: #dc2626;
+
+        }
+
+
+        /* =====================================================
+           EMPTY / ERROR MESSAGE
+        ===================================================== */
+
+        .empty-message {
+
+            text-align: center;
+
+            padding: 40px;
+
+            color: #64748b;
+
+        }
+
+
+        /* =====================================================
+           ADD QUESTION MODAL
+        ===================================================== */
+
+        #addQuestionModal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+        }
+
+
+        .question-modal-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(15, 23, 42, 0.65);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+        .question-modal {
+
+            width: 550px;
+
+            max-width: 100%;
+
+            background: white;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        /* =====================================================
+           MODAL HEADER
+        ===================================================== */
+
+        .question-modal-header {
+
+            background: #172554;
+
+            color: white;
+
+            padding: 18px 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .question-modal-header h2 {
+
+            margin: 0;
+
+            font-size: 20px;
+
+        }
+
+
+        .question-modal-header p {
+
+            margin: 5px 0 0;
+
+            font-size: 13px;
+
+            opacity: 0.8;
+
+        }
+
+
+        .close-question-modal {
+
+            border: none;
+
+            background: #334155;
+
+            color: white;
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
+        }
+
+
+        .close-question-modal:hover {
+
+            background: #475569;
+
+        }
+
+
+        /* =====================================================
+           MODAL BODY
+        ===================================================== */
+
+        .question-modal-body {
+
+            padding: 22px;
+
+        }
+
+
+        .question-modal-body label {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #334155;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .question-modal-body select,
+        .question-modal-body input {
+
+            width: 100%;
+
+            padding: 11px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
+
+            box-sizing: border-box;
+
+            font-family: inherit;
+
+            outline: none;
+
+        }
+
+
+        .question-modal-body select:focus,
+        .question-modal-body input:focus {
+
+            border-color: #2563eb;
+
+        }
+
+
+        /* =====================================================
+           QUESTION PREVIEW
+        ===================================================== */
+
+        .selected-question-preview {
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 8px;
+
+            padding: 15px;
+
+            margin-top: 18px;
+
+            margin-bottom: 18px;
+
+            min-height: 60px;
+
+            color: #475569;
+
+            font-size: 14px;
+
+        }
+
+
+        .selected-question-preview p {
+
+            margin: 8px 0 12px;
+
+            color: #1e293b;
+
+        }
+
+
+        .preview-option {
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =====================================================
+           FORM ROW
+        ===================================================== */
+
+        .question-form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        .question-form-row input {
+
+            margin-top: 7px;
+
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .add-question-message {
+
+            margin-top: 12px;
+
+            color: #dc2626;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================================
+           MODAL FOOTER
+        ===================================================== */
+
+        .question-modal-footer {
+
+            padding: 15px 22px;
+
+            border-top:
+                1px solid #e2e8f0;
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+        }
+
+
+        .cancel-question-btn,
+        .assign-question-btn {
+
+            border: none;
+
+            padding: 10px 17px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+        }
+
+
+        .cancel-question-btn {
+
+            background: #e2e8f0;
+
+            color: #1e293b;
+
+        }
+
+
+        .assign-question-btn {
+
+            background: #2563eb;
+
+            color: white;
+
+        }
+
+
+        .assign-question-btn:hover {
+
+            background: #1d4ed8;
+
+        }
+
+
+        .assign-question-btn:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .exam-info-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .question-page {
+
+                padding: 20px;
+
+            }
+
+
+            .exam-info-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .question-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+            }
+
+
+            .question-form-row {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+
+                <a href="admin-dashboard.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-student-management.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Students
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-subject-management.html">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Subjects
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-category-management.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Categories
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-question-management.html">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Questions
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="admin-exam-management.html">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    Exams
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-results.html">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-reports.html">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-logout.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <div class="question-page">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <div class="question-header">
+
+                <div>
+
+                    <h1>
+                        Exam Questions
+                    </h1>
+
+                    <p>
+                        Manage questions assigned to this examination.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="backBtn">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Back to Exams
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="add-question-btn"
+                        id="addQuestionBtn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Question
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EXAM INFORMATION
+            ================================================== -->
+
+            <section class="exam-info">
+
+                <div class="exam-info-grid">
+
+
+                    <div class="info-box">
+
+                        <span>
+                            Exam Code
+                        </span>
+
+                        <strong id="examCode">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>
+                            Exam ID
+                        </span>
+
+                        <strong id="examId">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>
+                            Exam Title
+                        </span>
+
+                        <strong id="examTitle">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>
+                            Assigned Questions
+                        </span>
+
+                        <strong id="questionCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ASSIGNED QUESTIONS
+            ================================================== -->
+
+            <section class="question-container">
+
+                <h2>
+                    Assigned Questions
+                </h2>
+
+
+                <table class="question-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order
+                            </th>
+
+                            <th>
+                                Question ID
+                            </th>
+
+                            <th>
+                                Marks
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="questionTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="4"
+                                class="empty-message">
+
+                                Loading questions...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../assets/js/admin/admin-exam-questions.js"></script>
+
+
+</body>
+
+</html>

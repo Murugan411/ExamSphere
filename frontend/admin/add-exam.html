@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Exam | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-exam-management.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="exam-form-page">
+
+        <div class="exam-form-card">
+
+            <!-- HEADER -->
+
+            <div class="exam-form-header">
+
+                <div>
+
+                    <h1>
+                        <i class="fa-solid fa-file-circle-plus"></i>
+                        Create Exam
+                    </h1>
+
+                    <p>
+                        Create a new online examination.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="window.location.href='admin-exam-management.html'">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="createExamForm">
+
+
+                <!-- EXAM CODE -->
+
+                <div class="form-group">
+
+                    <label for="examCode">
+                        Exam Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="examCode"
+                        name="examCode"
+                        placeholder="Example: EX004"
+                        required>
+
+                </div>
+
+
+                <!-- EXAM TITLE -->
+
+                <div class="form-group">
+
+                    <label for="examTitle">
+                        Exam Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="examTitle"
+                        name="examTitle"
+                        placeholder="Enter exam title"
+                        required>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subjectId">
+                        Subject
+                    </label>
+
+                    <select
+                        id="subjectId"
+                        name="subjectId"
+                        required>
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                        <option value="1">
+                            CS301 - Java Programming
+                        </option>
+
+                        <option value="2">
+                            CS302 - Python Programming
+                        </option>
+
+                        <option value="3">
+                            CS303 - Database Management System
+                        </option>
+
+                        <option value="4">
+                            CS304 - Computer Networks
+                        </option>
+
+                        <option value="5">
+                            CS305 - Operating Systems
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DURATION -->
+
+                <div class="form-group">
+
+                    <label for="duration">
+
+                        Duration
+                        <span>(Minutes)</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="duration"
+                        name="duration"
+                        min="1"
+                        placeholder="Example: 60"
+                        required>
+
+                </div>
+
+
+                <!-- TOTAL MARKS -->
+
+                <div class="form-group">
+
+                    <label for="totalMarks">
+                        Total Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="totalMarks"
+                        name="totalMarks"
+                        min="1"
+                        placeholder="Example: 100"
+                        required>
+
+                </div>
+
+
+                <!-- PASSING MARKS -->
+
+                <div class="form-group">
+
+                    <label for="passingMarks">
+                        Passing Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="passingMarks"
+                        name="passingMarks"
+                        min="1"
+                        placeholder="Example: 40"
+                        required>
+
+                </div>
+
+
+                <!-- EXAM DATE -->
+
+                <div class="form-group">
+
+                    <label for="examDate">
+                        Exam Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="examDate"
+                        name="examDate"
+                        required>
+
+                </div>
+
+
+                <!-- EXAM TIME -->
+
+                <div class="form-group">
+
+                    <label for="examTime">
+                        Exam Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="examTime"
+                        name="examTime"
+                        required>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select
+                        id="status"
+                        name="status">
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="window.location.href='admin-exam-management.html'">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fa-solid fa-save"></i>
+
+                        Create Exam
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/admin/add-exam.js"></script>
+
+</body>
+
+</html>

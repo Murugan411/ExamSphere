@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Take Exam | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/student/student-take-exam.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <main class="exam-container">
+
+        <!-- ==============================
+             EXAM HEADER
+        =============================== -->
+
+        <header class="exam-header">
+
+            <div>
+
+                <h2 id="examTitle">
+                    Java Programming Assessment
+                </h2>
+
+                <p>
+                    Answer all questions before submitting.
+                </p>
+
+            </div>
+
+            <div class="timer">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <span id="timer">
+                    60:00
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+             EXAM BODY
+        =============================== -->
+
+        <div class="exam-body">
+
+
+            <!-- ==============================
+                 QUESTION PANEL
+            =============================== -->
+
+            <section class="question-panel">
+
+
+                <!-- QUESTION NUMBER -->
+
+                <div class="question-number">
+
+                    Question
+                    <span id="questionNo">1</span>
+                    of
+                    <span id="totalQuestions">0</span>
+
+                </div>
+
+
+                <!-- QUESTION TEXT -->
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+
+                <!-- OPTIONS -->
+
+                <div class="options">
+
+
+                    <!-- OPTION A -->
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="answer"
+                            value=""
+                            id="optionA"
+                        >
+
+                        <span id="optionAText">
+                            Option A
+                        </span>
+
+                    </label>
+
+
+                    <!-- OPTION B -->
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="answer"
+                            value=""
+                            id="optionB"
+                        >
+
+                        <span id="optionBText">
+                            Option B
+                        </span>
+
+                    </label>
+
+
+                    <!-- OPTION C -->
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="answer"
+                            value=""
+                            id="optionC"
+                        >
+
+                        <span id="optionCText">
+                            Option C
+                        </span>
+
+                    </label>
+
+
+                    <!-- OPTION D -->
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="answer"
+                            value=""
+                            id="optionD"
+                        >
+
+                        <span id="optionDText">
+                            Option D
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+
+                <!-- ==============================
+                     PREVIOUS / NEXT
+                =============================== -->
+
+                <div class="exam-buttons">
+
+                    <button
+                        type="button"
+                        id="previousBtn">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Previous
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="nextBtn">
+
+                        Save & Next
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==============================
+                 QUESTION NAVIGATION
+            =============================== -->
+
+            <aside class="question-navigation">
+
+                <h3>
+                    Questions
+                </h3>
+
+
+                <!--
+
+                    JavaScript will generate
+                    question buttons dynamically
+                    according to database questions.
+
+                -->
+
+                <div
+                    class="question-grid"
+                    id="questionGrid">
+                </div>
+
+
+                <!-- ==============================
+                     SUBMIT EXAM
+                =============================== -->
+
+                <button
+                    type="button"
+                    id="submitExam">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Submit Exam
+
+                </button>
+
+
+            </aside>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
+
+    <script src="../assets/js/student/student-take-exam.js"></script>
+
+
+</body>
+
+</html>

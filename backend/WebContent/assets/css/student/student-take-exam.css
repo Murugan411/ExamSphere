@@ -1,0 +1,449 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+}
+
+/* ======================================
+   MAIN CONTAINER
+====================================== */
+
+.exam-container{
+
+    width:95%;
+
+    max-width:1600px;
+
+    margin:30px auto;
+
+}
+
+/* ======================================
+   HEADER
+====================================== */
+
+.exam-header{
+
+    background:#ffffff;
+
+    padding:25px 35px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.exam-header h2{
+
+    color:#1e293b;
+
+    margin-bottom:8px;
+
+}
+
+.exam-header p{
+
+    color:#64748b;
+
+}
+
+/* ======================================
+   TIMER
+====================================== */
+
+.timer{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    padding:15px 25px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+/* ======================================
+   BODY
+====================================== */
+
+.exam-body{
+
+    display:grid;
+
+    grid-template-columns:3fr 1fr;
+
+    gap:30px;
+
+}
+
+/* ======================================
+   QUESTION PANEL
+====================================== */
+
+.question-panel{
+
+    background:#ffffff;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.question-number{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.question-panel h3{
+
+    font-size:24px;
+
+    margin-bottom:35px;
+
+    color:#1e293b;
+
+    line-height:1.6;
+
+}
+
+/* ======================================
+   OPTIONS
+====================================== */
+
+.options{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    border:1px solid #dbe2ea;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.options label:hover{
+
+    background:#eff6ff;
+
+    border-color:#2563EB;
+
+}
+
+.options input{
+
+    transform:scale(1.2);
+
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.exam-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:45px;
+
+}
+
+.exam-buttons button{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#previousBtn{
+
+    background:#64748b;
+
+    color:#ffffff;
+
+}
+
+#previousBtn:hover{
+
+    background:#475569;
+
+}
+
+#nextBtn{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+#nextBtn:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   QUESTION NAVIGATION
+====================================== */
+
+.question-navigation{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    height:fit-content;
+
+    position:sticky;
+
+    top:20px;
+
+}
+
+.question-navigation h3{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+}
+
+.question-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+.question-grid button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#e2e8f0;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.question-grid button:hover{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+.question-grid .active{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+/* ======================================
+   SUBMIT BUTTON
+====================================== */
+
+#submitExam{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#16a34a;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#submitExam:hover{
+
+    background:#15803d;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.exam-body{
+
+    grid-template-columns:1fr;
+
+}
+
+.question-navigation{
+
+    position:static;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.exam-header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.exam-buttons{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.exam-buttons button{
+
+    width:100%;
+
+}
+
+.question-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+@media(max-width:480px){
+
+.question-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.question-panel{
+
+    padding:20px;
+
+}
+
+.question-navigation{
+
+    padding:20px;
+
+}
+
+}

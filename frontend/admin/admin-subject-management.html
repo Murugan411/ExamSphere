@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Subject Management | ExamSphere</title>
+
+    <!-- Subject Management CSS -->
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-subject-management.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>ExamSphere</h2>
+        </div>
+
+
+        <ul>
+
+            <!-- Dashboard -->
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+
+            <!-- Students -->
+            <li>
+                <a href="admin-student-management.html">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Students
+                </a>
+            </li>
+
+
+            <!-- Subjects -->
+            <li class="active">
+                <a href="admin-subject-management.html">
+                    <i class="fa-solid fa-book"></i>
+                    Subjects
+                </a>
+            </li>
+
+
+            <!-- Categories -->
+            <li>
+                <a href="admin-category-management.html">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categories
+                </a>
+            </li>
+
+
+            <!-- Questions -->
+            <li>
+                <a href="admin-question-management.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Questions
+                </a>
+            </li>
+
+
+            <!-- Exams -->
+            <li>
+                <a href="admin-exam-management.html">
+                    <i class="fa-solid fa-file-pen"></i>
+                    Exams
+                </a>
+            </li>
+
+
+            <!-- Results -->
+            <li>
+                <a href="admin-results.html">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    Results
+                </a>
+            </li>
+
+
+            <!-- Reports -->
+            <li>
+                <a href="admin-reports.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reports
+                </a>
+            </li>
+
+
+            <!-- Profile -->
+            <li>
+                <a href="admin-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+
+            <!-- Settings -->
+            <li>
+                <a href="admin-settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+
+            <!-- Logout -->
+            <li>
+                <a href="admin-logout.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Subject Management
+                </h1>
+
+                <p>
+                    Manage all subjects available in the system.
+                </p>
+
+            </div>
+
+
+            <!-- Add Subject -->
+            <button
+                type="button"
+                class="add-btn"
+                id="addSubjectBtn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Subject
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SEARCH / EXPORT TOOLBAR
+        ================================================== -->
+
+        <section class="toolbar">
+
+
+            <!-- Search -->
+            <input
+                type="text"
+                id="subjectSearch"
+                placeholder="Search Subject...">
+
+
+            <!-- Export -->
+            <button
+                type="button"
+                id="exportSubjectBtn">
+
+                <i class="fa-solid fa-download"></i>
+
+                Export
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SUBJECT TABLE
+        ================================================== -->
+
+        <section class="table-container">
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Code
+                        </th>
+
+                        <th>
+                            Subject Name
+                        </th>
+
+                        <th>
+                            Faculty
+                        </th>
+
+                        <th>
+                            Semester
+                        </th>
+
+                        <th>
+                            Credits
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <!-- =================================================
+                     IMPORTANT
+
+                     DO NOT PUT STATIC SUBJECTS HERE.
+
+                     JavaScript will load subjects from MySQL
+                     using ../subject
+                ================================================== -->
+
+                <tbody id="subjectTable">
+
+                    <tr>
+
+                        <td
+                            colspan="7"
+                            style="
+                                text-align:center;
+                                padding:30px;
+                                color:#64748b;
+                            ">
+
+                            Loading subjects...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUBJECT MANAGEMENT JAVASCRIPT
+         
+         ?v=3 forces browser to load the latest JS file
+         instead of using an old cached version.
+    ====================================================== -->
+
+    <script src="../assets/js/admin/admin-subject-management.js?v=9999"></script>
+
+
+</body>
+
+</html>

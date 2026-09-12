@@ -1,0 +1,245 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/* ======================================
+   MAIN CONTAINER
+====================================== */
+
+.submit-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ======================================
+   CARD
+====================================== */
+
+.submit-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+/* ======================================
+   SUCCESS ICON
+====================================== */
+
+.success-icon{
+
+    margin-bottom:25px;
+
+}
+
+.success-icon i{
+
+    font-size:90px;
+
+    color:#16a34a;
+
+}
+
+/* ======================================
+   TITLE
+====================================== */
+
+.submit-card h1{
+
+    color:#1e293b;
+
+    margin-bottom:15px;
+
+}
+
+.submit-card p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+/* ======================================
+   SUMMARY
+====================================== */
+
+.summary{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.summary-box{
+
+    background:#f8fafc;
+
+    padding:30px;
+
+    border-radius:15px;
+
+}
+
+.summary-box h3{
+
+    font-size:36px;
+
+    color:#2563EB;
+
+    margin-bottom:10px;
+
+}
+
+.summary-box span{
+
+    color:#64748b;
+
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.button-group button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#dashboardBtn{
+
+    background:#64748b;
+
+    color:#ffffff;
+
+}
+
+#dashboardBtn:hover{
+
+    background:#475569;
+
+}
+
+#resultBtn{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+#resultBtn:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:768px){
+
+.submit-card{
+
+    padding:30px;
+
+}
+
+.summary{
+
+    grid-template-columns:1fr;
+
+}
+
+.button-group{
+
+    flex-direction:column;
+
+}
+
+.button-group button{
+
+    width:100%;
+
+}
+
+}

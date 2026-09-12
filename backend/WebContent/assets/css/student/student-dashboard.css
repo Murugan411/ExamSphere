@@ -1,0 +1,386 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+    display:flex;
+
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:#1e293b;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    overflow:auto;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo h2{
+
+    color:#ffffff;
+
+    font-size:28px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+.sidebar ul li{
+
+    margin:8px 15px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+.sidebar ul li.active a{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+.sidebar ul li i{
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    min-height:100vh;
+
+    padding:35px;
+
+}
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.topbar h1{
+
+    color:#1e293b;
+
+    font-size:34px;
+
+}
+
+.student-info{
+
+    background:#ffffff;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/* ======================================
+   DASHBOARD CARDS
+====================================== */
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card i{
+
+    font-size:40px;
+
+    color:#2563EB;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    font-size:32px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#64748b;
+
+}
+
+/* ======================================
+   UPCOMING EXAMS
+====================================== */
+
+.upcoming-exams{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.upcoming-exams h2{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+table td{
+
+    padding:15px;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+table tr:hover{
+
+    background:#f8fafc;
+
+}
+
+table button{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+table button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+
+    width:calc(100% - 220px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+}

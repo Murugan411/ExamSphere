@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exam History | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/student/student-history.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="history-container">
+
+        <!-- Header -->
+
+        <header class="history-header">
+
+            <div>
+
+                <h1>Exam History</h1>
+
+                <p>View all previously completed examinations.</p>
+
+            </div>
+
+        </header>
+
+        <!-- Search -->
+
+        <section class="history-search">
+
+            <input
+                type="text"
+                id="searchExam"
+                placeholder="Search by Subject...">
+
+        </section>
+
+        <!-- History Table -->
+
+        <section class="history-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Exam ID</th>
+
+                        <th>Subject</th>
+
+                        <th>Date</th>
+
+                        <th>Score</th>
+
+                        <th>Percentage</th>
+
+                        <th>Grade</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="historyBody">
+
+                    <tr>
+
+                        <td>EX001</td>
+
+                        <td>Java Programming</td>
+
+                        <td>15 Aug 2026</td>
+
+                        <td>85 / 100</td>
+
+                        <td>85%</td>
+
+                        <td>A</td>
+
+                        <td class="pass">PASS</td>
+
+                        <td>
+
+                            <button>
+
+                                View
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>EX002</td>
+
+                        <td>Database Management</td>
+
+                        <td>18 Aug 2026</td>
+
+                        <td>72 / 100</td>
+
+                        <td>72%</td>
+
+                        <td>B</td>
+
+                        <td class="pass">PASS</td>
+
+                        <td>
+
+                            <button>
+
+                                View
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>EX003</td>
+
+                        <td>Python Programming</td>
+
+                        <td>22 Aug 2026</td>
+
+                        <td>38 / 100</td>
+
+                        <td>38%</td>
+
+                        <td>F</td>
+
+                        <td class="fail">FAIL</td>
+
+                        <td>
+
+                            <button>
+
+                                View
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="../assets/js/student/student-history.js"></script>
+
+</body>
+
+</html>

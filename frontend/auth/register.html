@@ -1,0 +1,212 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration | ExamSphere</title>
+
+    <link rel="stylesheet" href="../assets/css/auth/register.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <!-- Left Section -->
+
+        <div class="register-left">
+
+            <h1>Create Your Account</h1>
+
+            <p>
+
+                Join ExamSphere to access online assessments,
+                monitor your performance, and receive instant results.
+
+            </p>
+
+            <div class="register-image">
+
+                <!-- Image will be added later -->
+
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+
+        <div class="register-right">
+
+            <div class="register-box">
+
+                <h2>Student Registration</h2>
+
+                <p>Please fill in your details.</p>
+
+                <form>
+
+                    <div class="input-box">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Register Number</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter register number"
+                            required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter email address"
+                            required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Department</label>
+
+                        <select required>
+
+                            <option value="">Select Department</option>
+
+                            <option>CSE</option>
+
+                            <option>IT</option>
+
+                            <option>ECE</option>
+
+                            <option>EEE</option>
+
+                            <option>Mechanical</option>
+
+                            <option>Civil</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Year of Study</label>
+
+                        <select required>
+
+                            <option value="">Select Year</option>
+
+                            <option>I Year</option>
+
+                            <option>II Year</option>
+
+                            <option>III Year</option>
+
+                            <option>IV Year</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Password</label>
+
+                        <div class="password-field">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create password"
+                                required>
+
+                            <i class="fa-solid fa-eye" id="togglePassword"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Confirm Password</label>
+
+                        <div class="password-field">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm password"
+                                required>
+
+                            <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit">
+
+                        Register
+
+                    </button>
+
+                </form>
+
+                <div class="login-link">
+
+                    Already have an account?
+
+                    <a href="login.html">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../assets/js/auth/register.js"></script>
+
+</body>
+
+</html>

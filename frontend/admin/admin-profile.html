@@ -1,0 +1,503 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Profile | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-profile.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+
+                <a href="admin-dashboard.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-student-management.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Students
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-subject-management.html">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Subjects
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-category-management.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Categories
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-question-management.html">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Questions
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-exam-management.html">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    Exams
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-results.html">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-reports.html">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="admin-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="admin-logout.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <h1>Admin Profile</h1>
+
+            <p>
+                Manage your administrator account information.
+            </p>
+
+        </header>
+
+
+
+        <!-- =====================================
+             PROFILE SECTION
+        ====================================== -->
+
+        <section class="profile-container">
+
+
+            <!-- =================================
+                 PROFILE CARD
+            ================================== -->
+
+            <div class="profile-card">
+
+
+                <div class="profile-header">
+
+
+                    <div class="profile-image-container">
+
+                        <img
+                            id="profileImage"
+                            src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff&size=160"
+                            alt="Admin Profile">
+
+
+                        <label
+                            for="profileImageInput"
+                            class="image-edit">
+
+                            <i class="fa-solid fa-camera"></i>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="profileImageInput"
+                            accept="image/*"
+                            hidden>
+
+                    </div>
+
+
+                    <div class="profile-title">
+
+                        <h2 id="displayName">
+                            Administrator
+                        </h2>
+
+                        <p>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            System Administrator
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROFILE INFORMATION
+                ================================== -->
+
+                <div class="profile-information">
+
+
+                    <div class="info-section">
+
+                        <h3>
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Personal Information
+
+                        </h3>
+
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter full name"
+                                    disabled>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Admin Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    placeholder="Enter email"
+                                    disabled>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phoneNumber"
+                                    placeholder="Enter phone number"
+                                    disabled>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Role
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="Administrator"
+                                    disabled>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ACCOUNT INFORMATION
+                    ================================== -->
+
+                    <div class="info-section">
+
+
+                        <h3>
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            Account Information
+
+                        </h3>
+
+
+                        <div class="account-grid">
+
+
+                            <div class="account-item">
+
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <strong class="status-active">
+
+                                    <i class="fa-solid fa-circle"></i>
+
+                                    Active
+
+                                </strong>
+
+                            </div>
+
+
+                            <div class="account-item">
+
+                                <span>
+                                    Account Type
+                                </span>
+
+                                <strong>
+                                    Administrator
+                                </strong>
+
+                            </div>
+
+
+                            <div class="account-item">
+
+                                <span>
+                                    Access Level
+                                </span>
+
+                                <strong>
+                                    Full Access
+                                </strong>
+
+                            </div>
+
+
+                            <div class="account-item">
+
+                                <span>
+                                    Platform
+                                </span>
+
+                                <strong>
+                                    ExamSphere
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         BUTTONS
+                    ================================== -->
+
+                    <div class="profile-actions">
+
+
+                        <button
+                            type="button"
+                            class="edit-btn"
+                            id="editProfileBtn">
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            Edit Profile
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="save-btn"
+                            id="saveProfileBtn"
+                            style="display: none;">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Save Changes
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            id="cancelProfileBtn"
+                            style="display: none;">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                            Cancel
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../assets/js/admin/admin-profile.js"></script>
+
+</body>
+
+</html>

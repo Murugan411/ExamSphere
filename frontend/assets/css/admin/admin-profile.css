@@ -1,0 +1,756 @@
+ /* ==========================================
+   ExamSphere - Admin Profile
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1e293b;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: #1e293b;
+
+    color: white;
+
+    z-index: 1000;
+
+}
+
+
+.logo {
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 25px;
+
+    border-bottom: 1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+.logo h2 {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+
+.sidebar ul {
+
+    list-style: none;
+
+    padding: 20px 12px;
+
+}
+
+
+.sidebar li {
+
+    margin-bottom: 7px;
+
+}
+
+
+.sidebar a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.25s ease;
+
+}
+
+
+.sidebar a i {
+
+    width: 18px;
+
+    text-align: center;
+
+}
+
+
+.sidebar a:hover {
+
+    background: #334155;
+
+    color: white;
+
+}
+
+
+.sidebar li.active a {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 35px;
+
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+
+    margin-bottom: 25px;
+
+}
+
+
+.topbar h1 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #172033;
+
+}
+
+
+.topbar p {
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   PROFILE CONTAINER
+========================================== */
+
+.profile-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+}
+
+
+/* ==========================================
+   PROFILE CARD
+========================================== */
+
+.profile-card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 30px rgba(15,23,42,0.08);
+
+    overflow: hidden;
+
+    animation: profileAppear 0.5s ease;
+
+}
+
+
+@keyframes profileAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   PROFILE HEADER
+========================================== */
+
+.profile-header {
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    color: white;
+
+}
+
+
+.profile-image-container {
+
+    position: relative;
+
+    width: 110px;
+
+    height: 110px;
+
+}
+
+
+.profile-image-container img {
+
+    width: 110px;
+
+    height: 110px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 4px solid white;
+
+}
+
+
+.image-edit {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+
+.profile-title h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.profile-title p {
+
+    font-size: 14px;
+
+    opacity: 0.9;
+
+}
+
+
+.profile-title i {
+
+    margin-right: 6px;
+
+}
+
+
+/* ==========================================
+   PROFILE INFORMATION
+========================================== */
+
+.profile-information {
+
+    padding: 30px 35px;
+
+}
+
+
+.info-section {
+
+    margin-bottom: 30px;
+
+}
+
+
+.info-section h3 {
+
+    font-size: 17px;
+
+    color: #1e293b;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.info-section h3 i {
+
+    color: #2563eb;
+
+    margin-right: 8px;
+
+}
+
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    transition: 0.2s ease;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            37,
+            99,
+            235,
+            0.08
+        );
+
+}
+
+
+.form-group input:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.9;
+
+}
+
+
+/* ==========================================
+   ACCOUNT GRID
+========================================== */
+
+.account-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.account-item {
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+
+    padding: 16px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.account-item span {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.account-item strong {
+
+    color: #334155;
+
+    font-size: 13px;
+
+}
+
+
+.status-active {
+
+    color: #16a34a !important;
+
+}
+
+
+.status-active i {
+
+    font-size: 7px;
+
+    margin-right: 5px;
+
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.profile-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 10px;
+
+}
+
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+}
+
+
+.edit-btn {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+.edit-btn:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+}
+
+
+.save-btn {
+
+    background: #16a34a;
+
+    color: white;
+
+}
+
+
+.save-btn:hover {
+
+    background: #15803d;
+
+}
+
+
+.cancel-btn {
+
+    background: #e2e8f0;
+
+    color: #334155;
+
+}
+
+
+.cancel-btn:hover {
+
+    background: #cbd5e1;
+
+}
+
+
+.edit-btn i,
+.save-btn i,
+.cancel-btn i {
+
+    margin-right: 6px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 210px;
+
+    }
+
+    .main-content {
+
+        margin-left: 210px;
+
+        padding: 25px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+
+    }
+
+    .sidebar ul {
+
+        display: none;
+
+    }
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .account-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .profile-header {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .profile-information {
+
+        padding: 20px;
+
+    }
+
+    .profile-header {
+
+        padding: 25px 20px;
+
+    }
+
+    .profile-actions {
+
+        flex-direction: column;
+
+    }
+
+    .edit-btn,
+    .save-btn,
+    .cancel-btn {
+
+        width: 100%;
+
+    }
+
+}

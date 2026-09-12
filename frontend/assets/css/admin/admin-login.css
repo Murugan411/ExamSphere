@@ -1,0 +1,409 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+    min-height:100vh;
+
+}
+
+/* ======================================
+   LOGIN CONTAINER
+====================================== */
+
+.login-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    min-height:100vh;
+
+}
+
+/* ======================================
+   LEFT SECTION
+====================================== */
+
+.login-left{
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+    color:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:70px;
+
+}
+
+.login-left h1{
+
+    font-size:48px;
+
+    margin-bottom:25px;
+
+}
+
+.login-left p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+.login-image{
+
+    height:320px;
+
+    border:2px dashed rgba(255,255,255,.4);
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:18px;
+
+}
+
+.login-image::before{
+
+    content:"Admin Illustration";
+
+}
+
+/* ======================================
+   RIGHT SECTION
+====================================== */
+
+.login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.login-box{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:#ffffff;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* ======================================
+   ADMIN ICON
+====================================== */
+
+.admin-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:#DBEAFE;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.admin-icon i{
+
+    font-size:40px;
+
+    color:#2563EB;
+
+}
+
+/* ======================================
+   HEADINGS
+====================================== */
+
+.login-box h2{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+    color:#1e293b;
+
+}
+
+.login-box p{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+/* ======================================
+   INPUTS
+====================================== */
+
+.input-box{
+
+    margin-bottom:22px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-box input:focus{
+
+    border-color:#2563EB;
+
+}
+
+/* ======================================
+   PASSWORD
+====================================== */
+
+.password-field{
+
+    position:relative;
+
+}
+
+.password-field input{
+
+    padding-right:45px;
+
+}
+
+.password-field i{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#64748b;
+
+}
+
+/* ======================================
+   OPTIONS
+====================================== */
+
+.login-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.login-options a{
+
+    text-decoration:none;
+
+    color:#2563EB;
+
+}
+
+.login-options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ======================================
+   BUTTON
+====================================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   BACK LINK
+====================================== */
+
+.back-home{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.back-home a{
+
+    text-decoration:none;
+
+    color:#2563EB;
+
+    font-weight:500;
+
+}
+
+.back-home a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.login-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.login-left{
+
+    display:none;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.login-right{
+
+    padding:20px;
+
+}
+
+.login-box{
+
+    padding:30px;
+
+}
+
+.login-box h2{
+
+    font-size:24px;
+
+}
+
+}

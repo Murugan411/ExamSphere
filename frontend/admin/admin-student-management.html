@@ -1,0 +1,855 @@
+ /* ==========================================
+   ExamSphere - Student Management
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const searchInput = document.getElementById("studentSearch");
+    const studentTable = document.getElementById("studentTable");
+
+
+    // ==========================================
+    // LOAD STUDENTS
+    // ==========================================
+
+    function loadStudents() {
+
+        fetch("../studentManagement")
+
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error("Failed to load students");
+                }
+
+                return response.json();
+            })
+
+            .then(students => {
+
+                studentTable.innerHTML = "";
+
+                if (students.length === 0) {
+
+                    studentTable.innerHTML = `
+                        <tr>
+                            <td colspan="8" style="text-align:center;">
+                                No students found
+                            </td>
+                        </tr>
+                    `;
+
+                    return;
+                }
+
+                students.forEach(student => {
+
+                    const row = document.createElement("tr");
+
+                    row.innerHTML = `
+
+                        <td>${student.studentId}</td>
+
+                        <td>${escapeHtml(student.fullName)}</td>
+
+                        <td>${escapeHtml(student.email)}</td>
+
+                        <td>${escapeHtml(student.phone)}</td>
+
+                        <td>${escapeHtml(student.department)}</td>
+
+                        <td>${student.yearOfStudy}</td>
+
+                        <td>
+                            <span class="${
+                                student.status === "Active"
+                                    ? "active-status"
+                                    : "inactive-status"
+                            }">
+                                ${escapeHtml(student.status)}
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="edit-btn"
+                                type="button">
+
+                                Edit
+
+                            </button>
+
+                            <button
+                                class="delete-btn"
+                                type="button">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+                    `;
+
+                    studentTable.appendChild(row);
+                });
+
+                attachRowEvents();
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Student loading error:",
+                    error
+                );
+
+                studentTable.innerHTML = `
+                    <tr>
+                        <td colspan="8" style="text-align:center;">
+                            Unable to load students
+                        </td>
+                    </tr>
+                `;
+            });
+    }
+
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+
+    searchInput.addEventListener("keyup", () => {
+
+        const value =
+            searchInput.value.toLowerCase();
+
+        const rows =
+            document.querySelectorAll(
+                "#studentTable tr"
+            );
+
+        rows.forEach(row => {
+
+            if (row.cells.length < 8) {
+                return;
+            }
+
+            const id =
+                row.cells[0].textContent.toLowerCase();
+
+            const name =
+                row.cells[1].textContent.toLowerCase();
+
+            const email =
+                row.cells[2].textContent.toLowerCase();
+
+            const department =
+                row.cells[4].textContent.toLowerCase();
+
+            if (
+                id.includes(value) ||
+                name.includes(value) ||
+                email.includes(value) ||
+                department.includes(value)
+            ) {
+
+                row.style.display = "";
+
+            } else {
+
+                row.style.display = "none";
+            }
+        });
+    });
+
+
+    // ==========================================
+    // ADD STUDENT
+    // ==========================================
+
+    const addButton =
+        document.querySelector(".add-btn");
+
+    if (addButton) {
+
+        addButton.addEventListener("click", () => {
+
+            window.location.href =
+                "add-student.html";
+
+        });
+    }
+
+
+    // ==========================================
+    // EDIT & DELETE EVENTS
+    // ==========================================
+
+    function attachRowEvents() {
+
+        const editButtons =
+            document.querySelectorAll(".edit-btn");
+
+        const deleteButtons =
+            document.querySelectorAll(".delete-btn");
+
+
+        // ======================================
+        // EDIT STUDENT
+        // ======================================
+
+        editButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const row =
+                    button.closest("tr");
+
+                const student = {
+
+                    studentId:
+                        parseInt(
+                            row.cells[0].textContent
+                        ),
+
+                    fullName:
+                        row.cells[1].textContent.trim(),
+
+                    email:
+                        row.cells[2].textContent.trim(),
+
+                    phone:
+                        row.cells[3].textContent.trim(),
+
+                    department:
+                        row.cells[4].textContent.trim(),
+
+                    yearOfStudy:
+                        parseInt(
+                            row.cells[5].textContent.trim()
+                        ),
+
+                    status:
+                        row.cells[6].textContent.trim()
+                };
+
+                openEditForm(student);
+            });
+        });
+
+
+        // ======================================
+        // DELETE STUDENT
+        // ======================================
+
+        deleteButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const row =
+                    button.closest("tr");
+
+                const studentId =
+                    parseInt(
+                        row.cells[0].textContent
+                    );
+
+                const studentName =
+                    row.cells[1].textContent.trim();
+
+                const confirmDelete =
+                    confirm(
+                        "Delete " +
+                        studentName +
+                        "?"
+                    );
+
+                if (confirmDelete) {
+
+                    alert(
+                        "Delete feature will be connected next."
+                    );
+                }
+            });
+        });
+
+
+        // ======================================
+        // ROW HOVER
+        // ======================================
+
+        const rows =
+            document.querySelectorAll(
+                "#studentTable tr"
+            );
+
+        rows.forEach(row => {
+
+            row.addEventListener(
+                "mouseenter",
+                () => {
+
+                    row.style.transition = ".3s";
+                    row.style.background = "#EFF6FF";
+                }
+            );
+
+            row.addEventListener(
+                "mouseleave",
+                () => {
+
+                    row.style.background = "";
+                }
+            );
+        });
+    }
+
+
+    // ==========================================
+    // EDIT FORM
+    // ==========================================
+
+    function openEditForm(student) {
+
+        const formContainer =
+            document.createElement("div");
+
+        formContainer.id =
+            "editStudentModal";
+
+        formContainer.innerHTML = `
+
+            <div class="edit-modal-overlay">
+
+                <div class="edit-modal">
+
+                    <div class="edit-modal-header">
+
+                        <h2>
+                            <i class="fa-solid fa-user-pen"></i>
+                            Edit Student
+                        </h2>
+
+                        <button
+                            type="button"
+                            id="closeEditModal">
+
+                            &times;
+
+                        </button>
+
+                    </div>
+
+
+                    <form id="editStudentForm">
+
+                        <input
+                            type="hidden"
+                            id="editStudentId"
+                            value="${student.studentId}">
+
+
+                        <div class="edit-form-grid">
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editFullName"
+                                    value="${escapeHtml(student.fullName)}"
+                                    required>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Register Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editRegisterNumber"
+                                    placeholder="Register Number"
+                                    required>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="editEmail"
+                                    value="${escapeHtml(student.email)}"
+                                    required>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Phone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="editPhone"
+                                    value="${escapeHtml(student.phone)}"
+                                    maxlength="10"
+                                    required>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Department
+                                </label>
+
+                                <select
+                                    id="editDepartment"
+                                    required>
+
+                                    <option value="CSE">
+                                        CSE
+                                    </option>
+
+                                    <option value="IT">
+                                        IT
+                                    </option>
+
+                                    <option value="ECE">
+                                        ECE
+                                    </option>
+
+                                    <option value="EEE">
+                                        EEE
+                                    </option>
+
+                                    <option value="MECH">
+                                        MECH
+                                    </option>
+
+                                    <option value="CIVIL">
+                                        CIVIL
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Year
+                                </label>
+
+                                <select
+                                    id="editYear"
+                                    required>
+
+                                    <option value="1">
+                                        I Year
+                                    </option>
+
+                                    <option value="2">
+                                        II Year
+                                    </option>
+
+                                    <option value="3">
+                                        III Year
+                                    </option>
+
+                                    <option value="4">
+                                        IV Year
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="edit-form-group">
+
+                                <label>
+                                    Status
+                                </label>
+
+                                <select
+                                    id="editStatus"
+                                    required>
+
+                                    <option value="Active">
+                                        Active
+                                    </option>
+
+                                    <option value="Inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="edit-form-actions">
+
+                            <button
+                                type="button"
+                                id="cancelEdit">
+
+                                Cancel
+
+                            </button>
+
+                            <button
+                                type="submit">
+
+                                <i class="fa-solid fa-save"></i>
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        `;
+
+        document.body.appendChild(
+            formContainer
+        );
+
+
+        // Set existing register number
+        // We need to fetch it from the database.
+
+        fetchStudentDetails(
+            student.studentId
+        );
+
+
+        // Set selected values
+
+        setTimeout(() => {
+
+            document.getElementById(
+                "editDepartment"
+            ).value =
+                student.department;
+
+            document.getElementById(
+                "editYear"
+            ).value =
+                student.yearOfStudy;
+
+            document.getElementById(
+                "editStatus"
+            ).value =
+                student.status;
+
+        }, 0);
+
+
+        // Close
+
+        document.getElementById(
+            "closeEditModal"
+        ).addEventListener(
+            "click",
+            closeEditForm
+        );
+
+
+        document.getElementById(
+            "cancelEdit"
+        ).addEventListener(
+            "click",
+            closeEditForm
+        );
+
+
+        // Save
+
+        document.getElementById(
+            "editStudentForm"
+        ).addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+                updateStudent();
+            }
+        );
+    }
+
+
+    // ==========================================
+    // FETCH STUDENT DETAILS
+    // ==========================================
+
+    function fetchStudentDetails(studentId) {
+
+        fetch(
+            "../studentManagement"
+        )
+        .then(response => response.json())
+        .then(students => {
+
+            const student =
+                students.find(
+                    item =>
+                        item.studentId === studentId
+                );
+
+            if (student) {
+
+                const registerInput =
+                    document.getElementById(
+                        "editRegisterNumber"
+                    );
+
+                if (registerInput) {
+
+                    registerInput.value =
+                        student.registerNumber;
+                }
+            }
+        })
+        .catch(error => {
+
+            console.error(
+                "Unable to fetch student details:",
+                error
+            );
+        });
+    }
+
+
+    // ==========================================
+    // UPDATE STUDENT
+    // ==========================================
+
+    function updateStudent() {
+
+        const studentData = {
+
+            studentId:
+                parseInt(
+                    document.getElementById(
+                        "editStudentId"
+                    ).value
+                ),
+
+            fullName:
+                document.getElementById(
+                    "editFullName"
+                ).value.trim(),
+
+            registerNumber:
+                document.getElementById(
+                    "editRegisterNumber"
+                ).value.trim(),
+
+            email:
+                document.getElementById(
+                    "editEmail"
+                ).value.trim(),
+
+            phone:
+                document.getElementById(
+                    "editPhone"
+                ).value.trim(),
+
+            department:
+                document.getElementById(
+                    "editDepartment"
+                ).value,
+
+            yearOfStudy:
+                parseInt(
+                    document.getElementById(
+                        "editYear"
+                    ).value
+                ),
+
+            status:
+                document.getElementById(
+                    "editStatus"
+                ).value
+        };
+
+
+        if (!/^\d{10}$/.test(
+            studentData.phone
+        )) {
+
+            alert(
+                "Please enter a valid 10-digit phone number."
+            );
+
+            return;
+        }
+
+
+        fetch("../updateStudent", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type":
+                    "application/json"
+            },
+
+            body:
+                JSON.stringify(
+                    studentData
+                )
+
+        })
+
+        .then(response => {
+
+            return response.json();
+
+        })
+
+        .then(data => {
+
+            if (data.success) {
+
+                alert(
+                    "Student updated successfully!"
+                );
+
+                closeEditForm();
+
+                loadStudents();
+
+            } else {
+
+                alert(
+                    data.message ||
+                    "Unable to update student."
+                );
+            }
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Update student error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to the server."
+            );
+        });
+    }
+
+
+    // ==========================================
+    // CLOSE EDIT FORM
+    // ==========================================
+
+    function closeEditForm() {
+
+        const modal =
+            document.getElementById(
+                "editStudentModal"
+            );
+
+        if (modal) {
+            modal.remove();
+        }
+    }
+
+
+    // ==========================================
+    // EXPORT
+    // ==========================================
+
+    const exportButton =
+        document.querySelector(
+            ".toolbar button"
+        );
+
+    if (exportButton) {
+
+        exportButton.addEventListener(
+            "click",
+            () => {
+
+                alert(
+                    "Student List Export will be available next."
+                );
+            }
+        );
+    }
+
+
+    // ==========================================
+    // ESCAPE HTML
+    // ==========================================
+
+    function escapeHtml(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+            return "";
+        }
+
+        return String(value)
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+    }
+
+
+    // ==========================================
+    // INITIAL LOAD
+    // ==========================================
+
+    loadStudents();
+
+});

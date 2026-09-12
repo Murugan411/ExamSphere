@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Category Management | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-category-management.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+        <ul>
+
+            <li>
+
+                <a href="admin-dashboard.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-student-management.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Students
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-subject-management.html">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Subjects
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="admin-category-management.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Categories
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-question-management.html">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Questions
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-exam-management.html">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    Exams
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-results.html">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-reports.html">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-logout.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Category Management</h1>
+
+                <p>Manage all assessment categories.</p>
+
+            </div>
+
+            <button class="add-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Category
+
+            </button>
+
+        </header>
+
+        <!-- Toolbar -->
+
+        <section class="toolbar">
+
+            <input
+                type="text"
+                id="categorySearch"
+                placeholder="Search Category...">
+
+            <button>
+
+                <i class="fa-solid fa-download"></i>
+
+                Export
+
+            </button>
+
+        </section>
+
+        <!-- Category Table -->
+
+        <section class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Category Code</th>
+
+                        <th>Category Name</th>
+
+                        <th>Description</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="categoryTable">
+
+                    <tr>
+
+                        <td>CAT001</td>
+
+                        <td>Programming</td>
+
+                        <td>Programming Language Assessments</td>
+
+                        <td class="active-status">
+
+                            Active
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CAT002</td>
+
+                        <td>Database</td>
+
+                        <td>Database Related Exams</td>
+
+                        <td class="active-status">
+
+                            Active
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>CAT003</td>
+
+                        <td>Networking</td>
+
+                        <td>Computer Network Exams</td>
+
+                        <td class="inactive-status">
+
+                            Inactive
+
+                        </td>
+
+                        <td>
+
+                            <button class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="../assets/js/admin/admin-category-management.js"></script>
+
+</body>
+
+</html>

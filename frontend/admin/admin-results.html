@@ -1,0 +1,305 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Results Management | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-results.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>ExamSphere</h2>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-student-management.html">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Students
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-subject-management.html">
+                    <i class="fa-solid fa-book"></i>
+                    Subjects
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-category-management.html">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-question-management.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Questions
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-exam-management.html">
+                    <i class="fa-solid fa-file-pen"></i>
+                    Exams
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="admin-results.html">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    Results
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-reports.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-logout.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Results Management</h1>
+
+                <p>
+                    View and manage student examination results.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= TOOLBAR ================= -->
+
+        <section class="toolbar">
+
+            <input
+                type="text"
+                id="resultSearch"
+                placeholder="Search Student / Exam / Subject...">
+
+            <button id="exportResultsBtn">
+
+                <i class="fa-solid fa-download"></i>
+
+                Export Results
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= RESULTS TABLE ================= -->
+
+        <section class="table-container">
+
+            <div class="loading" id="loadingMessage">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Loading results...
+
+            </div>
+
+
+            <div class="error-message" id="errorMessage"></div>
+
+
+            <table id="resultsTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Result ID</th>
+
+                        <th>Student</th>
+
+                        <th>Exam</th>
+
+                        <th>Subject</th>
+
+                        <th>Score</th>
+
+                        <th>Percentage</th>
+
+                        <th>Grade</th>
+
+                        <th>Status</th>
+
+                        <th>Exam Date</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="resultTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= RESULT MODAL ================= -->
+
+    <div class="modal-overlay" id="resultModal">
+
+        <div class="result-modal">
+
+            <div class="modal-header">
+
+                <h2>
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    Result Details
+                </h2>
+
+                <button id="closeModalBtn" class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="detail-row">
+                    <span>Result ID</span>
+                    <strong id="modalResultId">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Student</span>
+                    <strong id="modalStudent">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Exam</span>
+                    <strong id="modalExam">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Subject</span>
+                    <strong id="modalSubject">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Score</span>
+                    <strong id="modalScore">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Percentage</span>
+                    <strong id="modalPercentage">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Grade</span>
+                    <strong id="modalGrade">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Status</span>
+                    <strong id="modalStatus">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Exam Date</span>
+                    <strong id="modalExamDate">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Submitted At</span>
+                    <strong id="modalSubmittedAt">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button id="closeModalBtn2" class="modal-close-btn">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/admin/admin-results.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-student-management.html">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Students
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-subject-management.html">
+                    <i class="fa-solid fa-book"></i>
+                    Subjects
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-category-management.html">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-question-management.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Questions
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-exam-management.html">
+                    <i class="fa-solid fa-file-pen"></i>
+                    Exams
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-results.html">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                    Results
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-reports.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-logout.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>Welcome back, Administrator</p>
+
+            </div>
+
+            <div class="admin-profile">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <span>Admin</span>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard Cards -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <h2 id="totalStudents">350</h2>
+
+                <p>Total Students</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-book"></i>
+
+                <h2 id="totalSubjects">15</h2>
+
+                <p>Total Subjects</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <h2 id="questionBank">1200</h2>
+
+                <p>Question Bank</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-file-pen"></i>
+
+                <h2 id="totalExams">45</h2>
+
+                <p>Total Exams</p>
+
+            </div>
+
+        </section>
+
+        <!-- Dashboard Content -->
+
+        <section class="dashboard-content">
+
+            <!-- Recent Activities -->
+
+            <div class="activity-card">
+
+                <h2>Recent Activities</h2>
+
+                <ul>
+
+                    <li>✔ New Student Registered</li>
+
+                    <li>✔ Java Exam Created</li>
+
+                    <li>✔ Python Questions Updated</li>
+
+                    <li>✔ Results Published</li>
+
+                    <li>✔ New Subject Added</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Upcoming Exams -->
+
+            <div class="exam-card">
+
+                <h2>Upcoming Exams</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Subject</th>
+
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Java</td>
+
+                            <td>15 Aug 2026</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>DBMS</td>
+
+                            <td>18 Aug 2026</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Python</td>
+
+                            <td>22 Aug 2026</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../assets/js/admin/admin-dashboard.js?v=2"></script>
+
+</body>
+
+</html>

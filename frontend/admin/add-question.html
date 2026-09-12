@@ -1,0 +1,698 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Question | ExamSphere</title>
+
+    <!-- ADD QUESTION CSS -->
+    <link rel="stylesheet"
+          href="../assets/css/admin/add-question.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <h2>ExamSphere</h2>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+
+            <a href="admin-dashboard.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-student-management.html">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                Students
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-subject-management.html">
+
+                <i class="fa-solid fa-book"></i>
+
+                Subjects
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-category-management.html">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Categories
+
+            </a>
+
+        </li>
+
+
+        <li class="active">
+
+            <a href="admin-question-management.html">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                Questions
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-exam-management.html">
+
+                <i class="fa-solid fa-file-pen"></i>
+
+                Exams
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-results.html">
+
+                <i class="fa-solid fa-square-poll-vertical"></i>
+
+                Results
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-reports.html">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                Profile
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-logout.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>Add Question</h1>
+
+            <p>
+                Create a new question for the question bank.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="back-btn"
+            onclick="window.location.href='admin-question-management.html'">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Questions
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =================================================
+         QUESTION FORM
+    ================================================= -->
+
+    <section class="exam-form-page">
+
+
+        <div class="exam-form-card">
+
+
+            <!-- FORM HEADER -->
+
+            <div class="form-card-header">
+
+                <div>
+
+                    <h2>
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                        Question Details
+
+                    </h2>
+
+                    <p>
+                        Enter all required question information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="addQuestionForm">
+
+
+                <!-- =====================================
+                     SUBJECT + CATEGORY
+                ====================================== -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="subjectId">
+
+                            Subject
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <select
+                            id="subjectId"
+                            name="subjectId"
+                            required>
+
+                            <option value="">
+                                Select Subject
+                            </option>
+
+                            <option value="1">
+                                Java Programming
+                            </option>
+
+                            <option value="2">
+                                Python Programming
+                            </option>
+
+                            <option value="3">
+                                Database Management System
+                            </option>
+
+                            <option value="4">
+                                Computer Networks
+                            </option>
+
+                            <option value="5">
+                                Operating Systems
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="categoryId">
+
+                            Category
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <select
+                            id="categoryId"
+                            name="categoryId"
+                            required>
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="1">
+                                Programming
+                            </option>
+
+                            <option value="2">
+                                Database
+                            </option>
+
+                            <option value="3">
+                                Networking
+                            </option>
+
+                            <option value="4">
+                                General
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     QUESTION
+                ====================================== -->
+
+                <div class="form-group">
+
+                    <label for="questionText">
+
+                        Question
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <textarea
+                        id="questionText"
+                        name="questionText"
+                        rows="5"
+                        placeholder="Enter the question..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     OPTION A + B
+                ====================================== -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="optionA">
+
+                            Option A
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="optionA"
+                            name="optionA"
+                            placeholder="Enter option A"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="optionB">
+
+                            Option B
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="optionB"
+                            name="optionB"
+                            placeholder="Enter option B"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     OPTION C + D
+                ====================================== -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="optionC">
+
+                            Option C
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="optionC"
+                            name="optionC"
+                            placeholder="Enter option C"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="optionD">
+
+                            Option D
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="optionD"
+                            name="optionD"
+                            placeholder="Enter option D"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     ANSWER + DIFFICULTY + MARKS
+                ====================================== -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="correctAnswer">
+
+                            Correct Answer
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <select
+                            id="correctAnswer"
+                            name="correctAnswer"
+                            required>
+
+                            <option value="">
+                                Select Correct Answer
+                            </option>
+
+                            <option value="A">
+                                Option A
+                            </option>
+
+                            <option value="B">
+                                Option B
+                            </option>
+
+                            <option value="C">
+                                Option C
+                            </option>
+
+                            <option value="D">
+                                Option D
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="difficulty">
+
+                            Difficulty
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <select
+                            id="difficulty"
+                            name="difficulty"
+                            required>
+
+                            <option value="">
+                                Select Difficulty
+                            </option>
+
+                            <option value="Easy">
+                                Easy
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="Hard">
+                                Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="marks">
+
+                            Marks
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <input
+                            type="number"
+                            id="marks"
+                            name="marks"
+                            min="1"
+                            value="1"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     STATUS
+                ====================================== -->
+
+                <div class="form-group">
+
+                    <label for="status">
+
+                        Status
+
+                        <span>*</span>
+
+                    </label>
+
+
+                    <select
+                        id="status"
+                        name="status"
+                        required>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     ACTION BUTTONS
+                ====================================== -->
+
+                <div class="form-actions">
+
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="window.location.href='admin-question-management.html'">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancel
+
+                    </button>
+
+
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fa-solid fa-save"></i>
+
+                        Save Question
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../assets/js/admin/add-question.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Management | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/admin/admin-exam-management.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+        <ul>
+
+            <li>
+
+                <a href="admin-dashboard.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-student-management.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Students
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-subject-management.html">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Subjects
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-category-management.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Categories
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-question-management.html">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Questions
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="admin-exam-management.html">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    Exams
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-results.html">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-reports.html">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="admin-logout.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Exam Management</h1>
+
+                <p>Create and manage online examinations.</p>
+
+            </div>
+
+            <button class="add-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Create Exam
+
+            </button>
+
+        </header>
+
+        <!-- Toolbar -->
+
+        <section class="toolbar">
+
+            <input
+                type="text"
+                id="examSearch"
+                placeholder="Search Exam...">
+
+            <button>
+
+                <i class="fa-solid fa-download"></i>
+
+                Export
+
+            </button>
+
+        </section>
+
+        <!-- Exam Table -->
+
+        <section class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Exam ID</th>
+
+                        <th>Exam Title</th>
+
+                        <th>Subject</th>
+
+                        <th>Duration</th>
+
+                        <th>Questions</th>
+
+                        <th>Total Marks</th>
+
+                        <th>Pass Marks</th>
+
+                        <th>Exam Date</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="examTable">
+
+                    <tr>
+
+                        <td>EX001</td>
+
+                        <td>Java Mid Exam</td>
+
+                        <td>Java</td>
+
+                        <td>60 Min</td>
+
+                        <td>30</td>
+
+                        <td>100</td>
+
+                        <td>40</td>
+
+                        <td>15 Aug 2026</td>
+
+                        <td class="active-status">Active</td>
+
+                        <td>
+
+                            <button class="edit-btn">Edit</button>
+
+                            <button class="delete-btn">Delete</button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>EX002</td>
+
+                        <td>Python Quiz</td>
+
+                        <td>Python</td>
+
+                        <td>45 Min</td>
+
+                        <td>25</td>
+
+                        <td>75</td>
+
+                        <td>30</td>
+
+                        <td>20 Aug 2026</td>
+
+                        <td class="inactive-status">Inactive</td>
+
+                        <td>
+
+                            <button class="edit-btn">Edit</button>
+
+                            <button class="delete-btn">Delete</button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="../assets/js/admin/admin-exam-management.js"></script>
+
+</body>
+
+</html>

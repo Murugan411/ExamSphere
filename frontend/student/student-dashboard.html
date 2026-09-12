@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | ExamSphere</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/student/student-dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+            SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>ExamSphere</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <a href="student-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="student-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="student-available-exams.html">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                    Available Exams
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="student-history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Exam History
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="student-result.html">
+
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+
+            <!-- Leaderboard removed -->
+
+
+            <!-- Certificate removed -->
+
+
+            <li>
+
+                <a href="student-logout.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ===========================
+            MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <h1>Student Dashboard</h1>
+
+            <div class="student-info">
+
+                <span>Welcome, Student</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard Cards -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <h3>12</h3>
+
+                <p>Available Exams</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-square-poll-vertical"></i>
+
+                <h3>8</h3>
+
+                <p>Completed Exams</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-award"></i>
+
+                <h3>85%</h3>
+
+                <p>Average Score</p>
+
+            </div>
+
+
+            <!-- Current Rank card removed -->
+
+
+        </section>
+
+
+        <!-- Upcoming Exams -->
+
+        <section class="upcoming-exams">
+
+            <h2>Upcoming Exams</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Subject</th>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Duration</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Java Programming</td>
+
+                        <td>15 Aug 2026</td>
+
+                        <td>10:00 AM</td>
+
+                        <td>60 Minutes</td>
+
+                        <td>
+
+                            <button>Start</button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Database Management</td>
+
+                        <td>18 Aug 2026</td>
+
+                        <td>02:00 PM</td>
+
+                        <td>90 Minutes</td>
+
+                        <td>
+
+                            <button>Start</button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="../assets/js/student/student-dashboard.js"></script>
+
+</body>
+
+</html>

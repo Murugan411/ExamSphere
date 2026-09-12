@@ -1,0 +1,339 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fc;
+    display:flex;
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.sidebar{
+    width:270px;
+    height:100vh;
+    background:#1e293b;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow-y:auto;
+}
+
+.logo{
+    padding:30px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo h2{
+    color:#ffffff;
+    font-size:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 18px;
+    text-decoration:none;
+    color:#cbd5e1;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar ul li.active a{
+    background:#2563EB;
+    color:#ffffff;
+}
+
+.sidebar ul li a:hover{
+    background:#2563EB;
+    color:#ffffff;
+}
+
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    padding:35px;
+}
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    font-size:34px;
+    color:#1e293b;
+}
+
+.topbar p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.add-btn,
+.toolbar button{
+
+    background:#2563EB;
+    color:#ffffff;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.add-btn:hover,
+.toolbar button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   TOOLBAR
+====================================== */
+
+.toolbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    gap:20px;
+
+}
+
+.toolbar input{
+
+    flex:1;
+    max-width:450px;
+    padding:14px;
+    border:1px solid #CBD5E1;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+
+}
+
+.toolbar input:focus{
+
+    border-color:#2563EB;
+
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+.table-container{
+
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    min-width:900px;
+
+}
+
+thead{
+
+    background:#2563EB;
+    color:#ffffff;
+
+}
+
+th{
+
+    padding:16px;
+    text-align:left;
+
+}
+
+td{
+
+    padding:16px;
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/* ======================================
+   STATUS
+====================================== */
+
+.active-status{
+
+    color:#16A34A;
+    font-weight:600;
+
+}
+
+.inactive-status{
+
+    color:#DC2626;
+    font-weight:600;
+
+}
+
+/* ======================================
+   ACTION BUTTONS
+====================================== */
+
+.edit-btn{
+
+    background:#F59E0B;
+    color:#ffffff;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:8px;
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#D97706;
+
+}
+
+.delete-btn{
+
+    background:#DC2626;
+    color:#ffffff;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#B91C1C;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+    width:calc(100% - 220px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-left:0;
+    width:100%;
+    padding:20px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+
+}
+
+.toolbar{
+
+    flex-direction:column;
+    align-items:stretch;
+
+}
+
+.toolbar input{
+
+    max-width:100%;
+
+}
+
+}

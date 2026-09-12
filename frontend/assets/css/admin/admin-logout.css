@@ -1,0 +1,445 @@
+ /* ==========================================
+   ExamSphere - Admin Logout
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1e293b;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: #1e293b;
+
+    color: white;
+
+    z-index: 1000;
+
+}
+
+
+.logo {
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 25px;
+
+    border-bottom: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+.logo h2 {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+
+.sidebar ul {
+
+    list-style: none;
+
+    padding: 20px 12px;
+
+}
+
+
+.sidebar li {
+
+    margin-bottom: 7px;
+
+}
+
+
+.sidebar a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.sidebar a i {
+
+    width: 18px;
+
+    text-align: center;
+
+}
+
+
+.sidebar a:hover {
+
+    background: #334155;
+
+    color: white;
+
+}
+
+
+.sidebar li.active a {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* ==========================================
+   LOGOUT CONTAINER
+========================================== */
+
+.logout-container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+}
+
+
+/* ==========================================
+   LOGOUT CARD
+========================================== */
+
+.logout-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(15, 23, 42, 0.10);
+
+    animation: cardAppear 0.5s ease;
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   LOGOUT ICON
+========================================== */
+
+.logout-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 32px;
+
+}
+
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+.logout-card h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+    color: #1e293b;
+
+}
+
+
+.logout-title {
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    margin-bottom: 10px;
+
+}
+
+
+.logout-description {
+
+    font-size: 14px;
+
+    color: #64748b;
+
+    line-height: 1.7;
+
+    max-width: 430px;
+
+    margin: 0 auto 30px;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.logout-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+}
+
+
+.cancel-btn,
+.logout-btn {
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.cancel-btn {
+
+    background: #e2e8f0;
+
+    color: #334155;
+
+}
+
+
+.cancel-btn:hover {
+
+    background: #cbd5e1;
+
+    transform: translateY(-2px);
+
+}
+
+
+.logout-btn {
+
+    background: #dc2626;
+
+    color: white;
+
+}
+
+
+.logout-btn:hover {
+
+    background: #b91c1c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(220, 38, 38, 0.25);
+
+}
+
+
+.cancel-btn i,
+.logout-btn i {
+
+    margin-right: 7px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+
+        width: 190px;
+
+    }
+
+    .main-content {
+
+        margin-left: 190px;
+
+        padding: 20px;
+
+    }
+
+    .logout-card {
+
+        padding: 40px 25px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+
+    }
+
+    .sidebar ul {
+
+        display: none;
+
+    }
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+        min-height: calc(100vh - 75px);
+
+    }
+
+    .logout-buttons {
+
+        flex-direction: column;
+
+    }
+
+    .cancel-btn,
+    .logout-btn {
+
+        width: 100%;
+
+    }
+
+}

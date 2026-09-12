@@ -1,0 +1,702 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+    display:flex;
+
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:#1e293b;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    overflow-y:auto;
+
+}
+
+.logo{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo h2{
+
+    color:#ffffff;
+
+    font-size:30px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+.sidebar ul li{
+
+    margin:8px 15px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    padding:15px 18px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li.active a{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    padding:35px;
+
+}
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+}
+
+.topbar p{
+
+    color:#64748b;
+
+    margin-top:5px;
+
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.add-btn,
+.toolbar button{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover,
+.toolbar button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   TOOLBAR
+====================================== */
+
+.toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:20px;
+
+}
+
+.toolbar input{
+
+    flex:1;
+
+    max-width:450px;
+
+    padding:14px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.toolbar input:focus{
+
+    border-color:#2563EB;
+
+}
+
+/* ======================================
+   TABLE CONTAINER
+====================================== */
+
+.table-container{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    overflow-x:auto;
+
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:950px;
+
+}
+
+thead{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:16px;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/* ======================================
+   STATUS
+====================================== */
+
+.active-status{
+
+    color:#16A34A;
+
+    font-weight:600;
+
+}
+
+.inactive-status{
+
+    color:#DC2626;
+
+    font-weight:600;
+
+}
+
+/* ======================================
+   ACTION BUTTONS
+====================================== */
+
+.edit-btn{
+
+    background:#f59e0b;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-right:8px;
+
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#d97706;
+
+}
+
+.delete-btn{
+
+    background:#dc2626;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+
+    width:calc(100% - 220px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.toolbar{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.toolbar input{
+
+    max-width:100%;
+
+}
+
+}
+/* ==========================================
+   EDIT STUDENT MODAL
+========================================== */
+
+.edit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    padding: 20px;
+}
+
+.edit-modal {
+    width: 100%;
+    max-width: 720px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    animation: editModalOpen 0.25s ease;
+}
+
+@keyframes editModalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ==========================================
+   MODAL HEADER
+========================================== */
+
+.edit-modal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 25px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.edit-modal-header h2 {
+
+    margin: 0;
+
+    color: #1e293b;
+
+    font-size: 21px;
+}
+
+.edit-modal-header h2 i {
+
+    margin-right: 8px;
+
+    color: #2563eb;
+}
+
+#closeEditModal {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+#closeEditModal:hover {
+
+    color: #ef4444;
+}
+
+
+/* ==========================================
+   EDIT FORM
+========================================== */
+
+#editStudentForm {
+
+    padding: 25px;
+}
+
+.edit-form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.edit-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.edit-form-group label {
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+.edit-form-group input,
+.edit-form-group select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    outline: none;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus {
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ==========================================
+   FORM ACTIONS
+========================================== */
+
+.edit-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.edit-form-actions button {
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+#cancelEdit {
+
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+#cancelEdit:hover {
+
+    background: #cbd5e1;
+}
+
+.edit-form-actions button[type="submit"] {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+.edit-form-actions button[type="submit"]:hover {
+
+    background: #1d4ed8;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .edit-modal {
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .edit-form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .edit-form-actions {
+
+        flex-direction: column;
+    }
+
+    .edit-form-actions button {
+
+        width: 100%;
+    }
+}

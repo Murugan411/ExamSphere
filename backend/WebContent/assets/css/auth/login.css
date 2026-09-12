@@ -1,0 +1,381 @@
+/* ======================================
+   GOOGLE FONT
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================
+   RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fc;
+
+}
+
+/* ======================================
+   MAIN CONTAINER
+====================================== */
+
+.login-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+/* ======================================
+   LEFT SIDE
+====================================== */
+
+.login-left{
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+    color:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:70px;
+
+}
+
+.login-left h1{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.login-left p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:450px;
+
+}
+
+.login-image{
+
+    margin-top:60px;
+
+    width:100%;
+
+    height:320px;
+
+    border:2px dashed rgba(255,255,255,.4);
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    color:#dbeafe;
+
+}
+
+/* ======================================
+   RIGHT SIDE
+====================================== */
+
+.login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.login-box{
+
+    width:100%;
+
+    max-width:480px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.login-box h2{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.login-box p{
+
+    color:#64748B;
+
+    margin-bottom:35px;
+
+}
+
+/* ======================================
+   INPUTS
+====================================== */
+
+.input-box{
+
+    margin-bottom:25px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:500;
+
+    color:#334155;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-box input:focus{
+
+    border-color:#2563EB;
+
+}
+
+/* ======================================
+   PASSWORD
+====================================== */
+
+.password-field{
+
+    position:relative;
+
+}
+
+.password-field input{
+
+    padding-right:45px;
+
+}
+
+.password-field i{
+
+    position:absolute;
+
+    top:50%;
+
+    right:15px;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#64748B;
+
+}
+
+/* ======================================
+   OPTIONS
+====================================== */
+
+.login-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    font-size:14px;
+
+}
+
+.login-options a{
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+}
+
+.login-options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ======================================
+   BUTTON
+====================================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/* ======================================
+   REGISTER LINK
+====================================== */
+
+.register-link{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.register-link a{
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.register-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:992px){
+
+.login-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.login-left{
+
+    display:none;
+
+}
+
+.login-right{
+
+    padding:30px;
+
+}
+
+.login-box{
+
+    max-width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.login-box{
+
+    padding:30px 25px;
+
+}
+
+.login-box h2{
+
+    font-size:28px;
+
+}
+
+.login-options{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    align-items:flex-start;
+
+}
+
+}
